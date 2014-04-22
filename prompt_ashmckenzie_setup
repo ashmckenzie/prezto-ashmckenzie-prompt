@@ -11,10 +11,12 @@ prompt_ashmckenzie_precmd () {
   unsetopt XTRACE KSH_ARRAYS
   prompt_ashmckenzie_who_and_where
   prompt_ashmckenzie_directory
+
   if (( $+functions[git-info] ))
   then
     git-info
   fi
+
   if (( $+functions[ruby-info] ))
   then
     ruby-info
@@ -27,10 +29,12 @@ prompt_ashmckenzie_setup () {
   prompt_opts=(cr percent subst)
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd prompt_ashmckenzie_precmd
+
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{red}❯%F{yellow}❯%F{green}❯%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %B%F{green}❮%F{yellow}❮%F{red}❮%f%b'
+
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
   zstyle ':prezto:module:git:info:added' format '%%B%F{green}✚%f%%b'
@@ -45,8 +49,12 @@ prompt_ashmckenzie_setup () {
   zstyle ':prezto:module:git:info:stashed' format '%%B%F{cyan}✭%f%%b'
   zstyle ':prezto:module:git:info:unmerged' format '%%B%F{yellow}═%f%%b'
   zstyle ':prezto:module:git:info:untracked' format '%%B%F{white}◼%f%%b'
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '[%A%B%S%a%d%m%r%U%u]-'
+  zstyle ':prezto:module:git:info:clean' format '%F{green︎}✔%f'
+
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '[%C%A%B%S%a%d%m%r%U%u]-'
+
   zstyle ':prezto:module:ruby:info:version' format '%v%f'
+
   PROMPT=$'\n[${_prompt_ashmckenzie_who_and_where}%f-[%*]-[${ruby_info[version]}]-${git_info[prompt]}[${_prompt_ashmckenzie_directory}]\n$ '
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
