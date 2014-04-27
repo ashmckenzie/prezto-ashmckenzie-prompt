@@ -55,7 +55,7 @@ prompt_ashmckenzie_setup () {
 
   zstyle ':prezto:module:ruby:info:version' format '%v%f'
 
-  PROMPT=$'\n[${_prompt_ashmckenzie_who_and_where}%f-[%*]-[${ruby_info[version]}]-${git_info[prompt]}[${_prompt_ashmckenzie_directory}]\n$ '
+  PROMPT=$'\n[${_prompt_ashmckenzie_who_and_where}]%f-[%*]-[${ruby_info[version]}]-${git_info[prompt]}[${_prompt_ashmckenzie_directory}]\n$ '
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
