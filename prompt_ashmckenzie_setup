@@ -51,7 +51,7 @@ prompt_ashmckenzie_setup () {
   zstyle ':prezto:module:git:info:untracked' format '%%B%F{white}◼%f%%b'
   zstyle ':prezto:module:git:info:clean' format '%F{green︎}✔%f'
 
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '[%C%A%B%S%a%d%m%r%U%u]-'
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '[%C%A%B%S%a%d%m%r%U%u%b]-'
 
   zstyle ':prezto:module:ruby:info:version' format '%v%f'
 
